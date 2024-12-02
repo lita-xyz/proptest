@@ -68,7 +68,7 @@ fn make_utf16_invalid(buf: &mut [u16], p: usize) {
     buf[p] = (buf[p] & !force_bits_mask) | force_bits_value;
 }
 
-#[cfg(not(target_arch = "wasm32"))]
+#[cfg(not(any(target_arch = "wasm32", target_arch = "valida")))]
 mod var_error {
     use super::*;
 
